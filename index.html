@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a1a5c">
+  <title>Vota Paolo e Federica 🗳️</title>
+  <meta name="description" content="Vota Paolo e Federica come rappresentanti di classe!">
+  <meta property="og:title" content="Vota Paolo e Federica 🗳️">
+  <meta property="og:description" content="Fai il quiz e scopri 100 motivi per votare noi!">
+  <meta property="og:image" content="manifesto.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="confetti" id="confetti" aria-hidden="true"></div>
+
+  <main class="poster">
+
+    <!-- IMMAGINE PRINCIPALE (originale, non modificata) -->
+    <section class="hero">
+      <img src="manifesto.png" width="1028" height="1529"
+           alt="Manifesto elettorale: Vote for us – Paolo e Federica vestiti da Zio Sam che indicano chi guarda">
+    </section>
+
+    <!-- SCRITTE ELETTORALI SOTTO IL POSTER -->
+    <div class="banner">
+      <p class="banner-top">ELEZIONI RAPPRESENTANTI DI CLASSE</p>
+      <p class="banner-bottom"><span>★</span> PAOLO + FEDERICA <span>★</span> LA SCELTA GIUSTA <span>★</span></p>
+    </div>
+
+    <!-- QUIZ -->
+    <section class="quiz" id="quiz" aria-live="polite">
+      <div class="quiz-head">
+        <span class="badge">ELEZIONI 2026</span>
+        <span class="qnum" id="qnum">DOMANDA 01 / 04</span>
+      </div>
+      <div class="progress" id="progress" aria-hidden="true"></div>
+
+      <!-- Vista: domanda -->
+      <div class="view" id="viewQuestion">
+        <h2 class="question" id="question"></h2>
+
+        <div class="answers" id="answers">
+          <button class="btn btn-yes" id="btnYes" type="button">1. NOI 👑</button>
+          <button class="btn btn-no" id="btnNo" type="button">2. LORO 🤢💩</button>
+        </div>
+
+        <div class="feedback" id="feedback" role="status"></div>
+      </div>
+
+      <!-- Vista: schermata Patrizio -->
+      <div class="view" id="viewPatrizio" hidden>
+        <h2 class="question patrizio-title">NOI CONOSCIAMO PATRIZIO</h2>
+        <figure class="photo-frame">
+          <img src="patrizio.jpg" width="505" height="660" alt="Foto ufficiale della campagna con Patrizio">
+          <figcaption>★ FOTO UFFICIALE DELLA CAMPAGNA ★</figcaption>
+        </figure>
+        <button class="btn btn-yes" id="btnContinue" type="button">CONTINUA →</button>
+      </div>
+    </section>
+
+    <!-- SCHERMATA FINALE -->
+    <section class="finale" id="finale" hidden>
+      <p class="finale-small">FINE</p>
+      <h2 class="finale-big">BELLA SCELTA <span class="thumb">👍</span></h2>
+      <p class="finale-meta">
+        <span class="chip chip-red">PAOLO + FEDERICA</span>
+        <span class="chip chip-blue">2026</span>
+        <span class="chip chip-red">LA SCELTA GIUSTA</span>
+      </p>
+      <div class="stars-line" aria-hidden="true"><span>★</span><span class="big">★</span><span>★</span></div>
+
+      <!-- VIDEO -->
+      <div class="video-card">
+        <video id="video" controls playsinline preload="metadata"
+               poster="video-poster.jpg" src="video.mp4">
+          Il tuo browser non supporta i video.
+        </video>
+      </div>
+
+      <div class="accordion">
+        <button class="accordion-btn" id="accBtn" type="button"
+                aria-expanded="false" aria-controls="accPanel">
+          <span>🗳️ 100 motivi per votare noi e non loro</span>
+          <span class="chevron" aria-hidden="true">▼</span>
+        </button>
+        <div class="accordion-panel" id="accPanel" role="region">
+          <div class="accordion-inner">
+            <h3>🗳️ 100 motivi per votare Paolo e Federica</h3>
+            <ol id="motiviList"></ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="motivi.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
